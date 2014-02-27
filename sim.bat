@@ -1,0 +1,1 @@
+c:\j2sdk1.4.2_02\bin\java -cp scope.jar;RXTXcomm.jar scope -sim

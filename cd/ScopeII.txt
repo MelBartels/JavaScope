@@ -1,0 +1,9 @@
+This is called the Save to ScopeII window.
+
+First select (or de-select) the options you want to save to the ScopeII configuration file.  Be very careful here, make sure that you know what you're saving and the consequences of the save.  It may be a good idea to make a backup of the scope.cnf file before saving these parameters. 
+
+The current values that will be saved to the scopeII configuration file are displayed in the text windows, so you can inspect them before saving.  Please look at the numbers to be sure they are what you expect before saving.
+
+Clicking the Cancel button will return you to the main menu, without saving anything to the scopeII configuration file.
+
+

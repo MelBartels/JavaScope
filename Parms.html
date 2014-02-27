@@ -1,0 +1,301 @@
+<html>
+<head>
+<title>Parms</title>
+<link rel="stylesheet" type="text/css" href="status.css">
+</head>
+<body>
+<pre>
+<h1><center>Configuration parameters</center></h1><table border="1" width="100%">
+<tr>
+<td width="20%">siteName</td><td width="80%">geographic location's name</td></tr>
+<tr>
+<td width="20%">latitudeDeg</td><td width="80%">geographic location's latitude in decimal degrees</td></tr>
+<tr>
+<td width="20%">longitudeDeg</td><td width="80%">geographic location's longitude in decimal degrees; positive values indicates west of Greenwich</td></tr>
+<tr>
+<td width="20%">mountType</td><td width="80%">mounting type, options are:<br>mountTypeNone<br>mountTypeCustom<br>mountTypeEquatorial<br>mountTypeAltazimuth<br>mountTypeAltAlt<br>mountTypeHorseshoe<br>mountTypeEquatorialFork<br>mountTypeEquatorialYoke<br>mountTypeCrossAxisEnglish<br>mountTypeSplitRing<br>mountTypeGermanEquatorialMount<br>mountTypeExtendedGerman<br>mountTypeOffAxisTorqueTube<br>mountTypeWeightStressCompensated<br>mountTypeInvertedFork<br>mountTypeSiderostat<br>mountTypePolarSiderostat<br>mountTypeUranostat<br>mountTypeHeliostat<br>mountTypePolarHeliostat<br>mountTypeCoelostat<br>mountTypeCoude<br>mountTypeSpringfield<br><br>descriptions:<br>mountTypeCustom: user configured<br>mountTypeEquatorial: plain old equatorial mount where primary axis that rotates 360 deg aimed at pole<br>mountTypeAltazimuth: plain old altazimuth mount where primary axis that rotates 360 deg aimed at local zenith<br>mountTypeAltAlt: altazimuth mount where where primary axis that rotates 360 deg aimed at horizon<br>mountTypeHorseshoe: can swing to pole but cannot swing past pole<br>mountTypeEquatorialFork: can swing to and past pole into sub-polar region<br>mountTypeEquatorialYoke: cannot swing near pole<br>mountTypeCrossAxisEnglish: can track well past meridian when aimed toward celestial equator, but cannot cross meridian while aimed at sub-polar region due to poleward support post<br>mountTypeSplitRing: can swing through pole, cannot rotate primary axis full circle in RA<br>mountTypeGermanEquatorialMount: requires meridian flip<br>mountTypeExtendedGerman: no meridian flip, no pole support to impede crossing meridian while pointing underneath pole<br>mountTypeOffAxisTorqueTube: configured same as extended german<br>mountTypeWeightStressCompensated: per famous Zeiss example: dec and ota pivot on top of RA axis, counterweights held by bars that are placed outside ota and hang down past pivot<br>mountTypeInvertedFork: top of RA axis is split into fork that moves in dec, ota held by outside inverted fork that fits over the RA fork, this outside fork also holds the counterweights for the ota<br>mountTypeSiderostat: means stationary star, tube horizontal pointed at pole, flat is mounted equatorially<br>mountTypePolarSiderostat: means stationary star, tube parallel to polar axis looking down into flat, flat is mounted equatorially<br>mountTypeUranostat: tube horizontal pointed at pole, flat is mounted altazimuthly<br>mountTypeHeliostat: same as siderostat but looks at the Sun, only one axis of movementmountTypePolarHeliostat: same as heliostat but tube aimed up at polar axis<br>mountTypeCoelostat: developed from siderostat; means stationary sky, siderostat mirror fixed parallel to polar axis, tube moves in dec; plane mirror mounted facing the celestial equator on axis pointing to celestial pole, when driven around axis the reflected beam remains stationary and does not alter its orientation; sometimes a 2nd mirror used to reflect the light into the telescope<br>mountTypeCoude: 2 mirrors, the upper rotates in Dec, the lower rotates in RA<br>mountTypeSpringfield: 2 diagonals produce stationary eyepiece, needs meridian flip</td></tr>
+<tr>
+<td width="20%">canMoveToPole</td><td width="80%">if the telescope can point at the pole, then set this value to 'true', else 'false'</td></tr>
+<tr>
+<td width="20%">canMoveThruPole</td><td width="80%">if the telescope can swing through the pole into the sub-polar region, then set this value to 'true', else 'false'</td></tr>
+<tr>
+<td width="20%">primaryAxisFullyRotates</td><td width="80%">if the mount's primary axis can rotate through a full circle, then set this value to 'true', else 'false'</td></tr>
+<tr>
+<td width="20%">meridianFlipPossible</td><td width="80%">if a meridian flip is possible, then set this value to 'true', else 'false'</td></tr>
+<tr>
+<td width="20%">meridianFlipRequired</td><td width="80%">if a flip is required when the telescope crosses the meridian, then set this value to 'true', else 'false'</td></tr>
+<tr>
+<td width="20%">autoMeridianFlip</td><td width="80%">automatically flip the telescope if crossing the meridian; true/false</td></tr>
+<tr>
+<td width="20%">autoMeridianFlipFuzzDeg</td><td width="80%">distance that scope can track past the meridian before engaging the meridian flip, in decimal degrees</td></tr>
+<tr>
+<td width="20%">eyepieceFocus</td><td width="80%">an eyepiece's name and focus position</td></tr>
+<tr>
+<td width="20%">handpadPresent</td><td width="80%">if handpad is connected to the PIC servo control boards, then 'true' else 'false'</td></tr>
+<tr>
+<td width="20%">handpadMode</td><td width="80%">starting handpad mode, options are:<br>handpadModeOff<br>handpadModeAutoInit12<br>handpadModeAutoInit123<br>handpadModeInit1<br>handpadModeInit2<br>handpadModeInit3<br>handpadModePolarAlign<br>handpadModeAnalyze<br>handpadModePECSynch<br>handpadModeGuide<br>handpadModeGuideStay<br>handpadModeGuideStayRotate<br>handpadModeGuideStayDrag<br>handpadModeGuideSiTech<br>handpadModeGrandTour<br>handpadModeScrollTour<br>handpadModeScrollTourAuto<br>handpadModeRecordEquat<br>handpadModeRecordAltaz<br>handpadModeToggleTrack<br>handpadModeFRFocus<br>handpadModeSpiralSearch<br></td></tr>
+<tr>
+<td width="20%">handpadDesign</td><td width="80%">starting handpad direction button meaning, options are:<br>handpadDesignStandard<br>handpadDesignDirectionOnly<br>handpadDesignSiTech<br></td></tr>
+<tr>
+<td width="20%">handpadFlipUpDown</td><td width="80%">reverse the up/down handpad buttons</td></tr>
+<tr>
+<td width="20%">handpadFollowMeridianFlip</td><td width="80%">flip handpad's up/down buttons if meridian flipped since declination direction inverted when meridian flipped</td></tr>
+<tr>
+<td width="20%">SiTechRampDownDelaySec</td><td width="80%">ramp down delay after releasing a handpad direction button: prevents the scope from back tracking</td></tr>
+<tr>
+<td width="20%">spiralSearchRadiusDeg</td><td width="80%">spiral search pattern's radius, or, the distance between spiral sweeps</td></tr>
+<tr>
+<td width="20%">spiralSearchSpeedDegSec</td><td width="80%">speed at which to traverse the spiral search pattern</td></tr>
+<tr>
+<td width="20%">initState</td><td width="80%">starting initialization state, options are:<br>EquatorialAlignment<br>AltazimuthAlignment<br>AltAltAlignment<br>ConfigFileAlignment<br>UserAlignment<br>NoAlignment<br></td></tr>
+<tr>
+<td width="20%">initOne</td><td width="80%">let the program enter these values; initialization one coordinate values, ie, '0.0 90.0 44.0 0.0 0.0'</td></tr>
+<tr>
+<td width="20%">initTwo</td><td width="80%">let the program enter these values; initialization two coordinate values, ie, '0.0 90.0 44.0 0.0 0.0'</td></tr>
+<tr>
+<td width="20%">initThree</td><td width="80%">let the program enter these values; initialization three coordinate values, ie, '0.0 90.0 44.0 0.0 0.0'</td></tr>
+<tr>
+<td width="20%">z1Deg</td><td width="80%">axis misalignment error in decimal degrees</td></tr>
+<tr>
+<td width="20%">z2Deg</td><td width="80%">azimuth offset error in decimal degrees</td></tr>
+<tr>
+<td width="20%">z3Deg</td><td width="80%">altitude offset error in decimal degrees</td></tr>
+<tr>
+<td width="20%">dataFileCoordYear</td><td width="80%">coordinate year for the data files</td></tr>
+<tr>
+<td width="20%">precessionNutationAberration</td><td width="80%">turn on/off precession, nutation, and annual aberration corrections, particularly when reading the data files</td></tr>
+<tr>
+<td width="20%">refractAlign</td><td width="80%">mount alignment to use to calculate refraction, options are:<br>none<br>altaz<br>equat<br></td></tr>
+<tr>
+<td width="20%">backlashActive</td><td width="80%">'true' if backlash correction active, otherwise 'false'</td></tr>
+<tr>
+<td width="20%">useAltAzEC</td><td width="80%">'true' if using altitude vs azimuth axis error correction, otherwise 'false'</td></tr>
+<tr>
+<td width="20%">useAltAltEC</td><td width="80%">'true' if using altitude vs altitude axis error correction, otherwise 'false'</td></tr>
+<tr>
+<td width="20%">useAzAzEC</td><td width="80%">'true' if using azimuth vs azimuth axis error correction, otherwise 'false'</td></tr>
+<tr>
+<td width="20%">usePMC</td><td width="80%">'true' if using pointing model error correction, otherwise 'false'</td></tr>
+<tr>
+<td width="20%">buildPEC</td><td width="80%">how to build PEC file, format: servoID  description  motorStepsPerPECArray  PECSize  guidingCycles  Rotation  PECIxOffset</td></tr>
+<tr>
+<td width="20%">guideDragRaArcsecPerMin</td><td width="80%">Right Ascension drag in arcseconds per minute of time so that guiding corrections occur in one direction when handpadMode is handpadModeGuideStayDrag</td></tr>
+<tr>
+<td width="20%">guideDragDecArcsecPerMin</td><td width="80%">Declination drag in arcseconds per minute of time so that guiding corrections occur in one direction when handpadMode is handpadModeGuideStayDrag</td></tr>
+<tr>
+<td width="20%">handpadUpdateDrift</td><td width="80%">if 'true', then adopt drift values as calculated from guiding efforts, else 'false'</td></tr>
+<tr>
+<td width="20%">driftRaDegPerHr</td><td width="80%">drift in Right Ascension in degrees per hour</td></tr>
+<tr>
+<td width="20%">driftDecDegPerHr</td><td width="80%">drift in Declination in degrees per hour</td></tr>
+<tr>
+<td width="20%">encoderType</td><td width="80%">encoder interface box type, options are:<br>encoderNone<br>encoderDaveEk<br>encoderBSeg<br>encoderSkyCommander<br>encoderTangentNoReset<br>encoderTangentResetViaR<br>encoderTangentResetViaZ<br>encoderSiTech<br></td></tr>
+<tr>
+<td width="20%">encoderIOType</td><td width="80%">what type of IO method to use for the encoders, options are:<br>ioNone<br>ioFile<br>ioSerial<br>ioUDP<br>ioTCPserver<br>ioTCPclient<br>ioTCP<br></td></tr>
+<tr>
+<td width="20%">encoderSerialPortName</td><td width="80%">serial port to use for the encoders, ie, 'COM1' if Windows, '/dev/ttyS0' if Linux'</td></tr>
+<tr>
+<td width="20%">encoderBaudRate</td><td width="80%">serial port baud rate for encoders</td></tr>
+<tr>
+<td width="20%">encoderHomeIPPort</td><td width="80%">if using UDP method for the encoders, then the home port# to use</td></tr>
+<tr>
+<td width="20%">encoderRemoteIPName</td><td width="80%">if using UDP or TCP method for the encoders, then the remote machine's IP address</td></tr>
+<tr>
+<td width="20%">encoderRemoteIPPort</td><td width="80%">if using UDP or TCP method for the encoders, then the remote machine's port#</td></tr>
+<tr>
+<td width="20%">encoderFileLocation</td><td width="80%">if using files to transmit/receive, then location of the files</td></tr>
+<tr>
+<td width="20%">encoderTrace</td><td width="80%">record all communications to trace file</td></tr>
+<tr>
+<td width="20%">encoderAltDecCountsPerRev</td><td width="80%">altitude axis encoder counts per shaft revolution</td></tr>
+<tr>
+<td width="20%">encoderAzRaCountsPerRev</td><td width="80%">azimith axis encoder counts per shaft revolution</td></tr>
+<tr>
+<td width="20%">encoderAltDecDir</td><td width="80%">direction that altitude axis encoder counts increment, options are:<br>no<br>CW<br>CCW<br>biDir<br></td></tr>
+<tr>
+<td width="20%">encoderAzRaDir</td><td width="80%">direction that azimuth axis encoder counts increment, options are:<br>no<br>CW<br>CCW<br>biDir<br></td></tr>
+<tr>
+<td width="20%">encoderFieldRDir</td><td width="80%">direction that the field rotation axis encoder counts increment, options are:<br>no<br>CW<br>CCW<br>biDir<br></td></tr>
+<tr>
+<td width="20%">encoderFocusDir</td><td width="80%">direction that the focuser axis encoder counts increment, options are:<br>no<br>CW<br>CCW<br>biDir<br></td></tr>
+<tr>
+<td width="20%">encoderErrorThresholdDeg</td><td width="80%">error threshold of encoder vs current position before current position is reset to encoder position, in decimal degrees</td></tr>
+<tr>
+<td width="20%">resetScopeToEncodersTrackOffResetTarget</td><td width="80%">if encoder vs current position exceeds error threshold when tracking is off, then reset the target coordinates</td></tr>
+<tr>
+<td width="20%">resetScopeToEncodersTrackingResetTarget</td><td width="80%">if encoder vs current position exceeds error threshold when tracking, then reset the target coordinates</td></tr>
+<tr>
+<td width="20%">resetScopeToEncodersSlewingResetTarget</td><td width="80%">if encoder vs current position exceeds error threshold when slewing to a target position, then reset the target coordinates</td></tr>
+<tr>
+<td width="20%">encoderAltDecOffset</td><td width="80%">set by the program; difference between encoder and current altitude axis position</td></tr>
+<tr>
+<td width="20%">encoderAzRaOffset</td><td width="80%">set by the program; difference between encoder and current azimuth axis position</td></tr>
+<tr>
+<td width="20%">ProjectPlutoGuidePath</td><td width="80%">directory of Project Pluto's guide planetarium program and thus location of slewFile and slewOutFile, ie 'c:\GUIDE8\'</td></tr>
+<tr>
+<td width="20%">ProjectPlutoGuideExec</td><td width="80%">name of Project Pluto's guide executable program, ie Guide8.exe</td></tr>
+<tr>
+<td width="20%">readWriteExternalSlewFiles</td><td width="80%">if 'true', actively read/write the external slew files, else 'false'</td></tr>
+<tr>
+<td width="20%">updateHTMLFreqSec</td><td width="80%">html pages (ie, coordinate display and status displays) update frequency in seconds; if '0', then no update</td></tr>
+<tr>
+<td width="20%">extIOType</td><td width="80%">what type of IO method to use for external program control, options are:<br>ioNone<br>ioFile<br>ioSerial<br>ioUDP<br>ioTCPserver<br>ioTCPclient<br>ioTCP<br></td></tr>
+<tr>
+<td width="20%">extSerialPortName</td><td width="80%">serial port to use for external program control, ie, 'COM1' if Windows, '/dev/ttyS0' if Linux'</td></tr>
+<tr>
+<td width="20%">extBaudRate</td><td width="80%">baud rate for serial port for external program control</td></tr>
+<tr>
+<td width="20%">extHomeIPPort</td><td width="80%">if using UDP method for external program control, then the home port# to use</td></tr>
+<tr>
+<td width="20%">extRemoteIPName</td><td width="80%">if using UDP or TCP method for external program control, then the remote machine's IP address</td></tr>
+<tr>
+<td width="20%">extRemoteIPPort</td><td width="80%">if using UDP or TCP method for external program control, then the remote machine's port#</td></tr>
+<tr>
+<td width="20%">extFileLocation</td><td width="80%">if using files to transmit/receive for external program control, then location of the files</td></tr>
+<tr>
+<td width="20%">extTrace</td><td width="80%">record all communications to trace file</td></tr>
+<tr>
+<td width="20%">extPortWaitTimeMilliSecs</td><td width="80%">time in milliseconds to wait for completion of data transmit on the external port</td></tr>
+<tr>
+<td width="20%">LX200Control</td><td width="80%">'true' if software will receive LX200 styled commands, else 'false'</td></tr>
+<tr>
+<td width="20%">LX200IOType</td><td width="80%">what type of IO method to use for LX200 styled commands, options are:<br>ioNone<br>ioFile<br>ioSerial<br>ioUDP<br>ioTCPserver<br>ioTCPclient<br>ioTCP<br></td></tr>
+<tr>
+<td width="20%">LX200SerialPortName</td><td width="80%">serial port to use for LX200 styled commands, ie, 'COM1' if Windows, '/dev/ttyS0' if Linux'</td></tr>
+<tr>
+<td width="20%">LX200BaudRate</td><td width="80%">serial port baud rate for LX200 styled commands</td></tr>
+<tr>
+<td width="20%">LX200homeIPPort</td><td width="80%">if using UDP method for LX200 styled commands, then the home port# to use</td></tr>
+<tr>
+<td width="20%">LX200remoteIPName</td><td width="80%">if using UDP or TCP method for LX200 styled commands, then the remote machine's IP address</td></tr>
+<tr>
+<td width="20%">LX200RemoteIPPort</td><td width="80%">if using UDP or TCP method for LX200 styled commands, then the remote machine's port#</td></tr>
+<tr>
+<td width="20%">LX200FileLocation</td><td width="80%">if using files to transmit/receive LX200 styled commands, then location of the files</td></tr>
+<tr>
+<td width="20%">LX200Trace</td><td width="80%">record all communications to trace file</td></tr>
+<tr>
+<td width="20%">LX200MotionTimeoutSec</td><td width="80%">timeout in seconds to stop LX200 styled commanded motion if no stop command received</td></tr>
+<tr>
+<td width="20%">LX200_LongFormat</td><td width="80%">'true' if long format coordinate form is used with the LX200 styled commands, otherwise 'false'</td></tr>
+<tr>
+<td width="20%">LX200_ContinueTrack</td><td width="80%">'true' if tracking should continue after a LX200 Quit Motion or Stop Slew command is received, otherwise 'false'</td></tr>
+<tr>
+<td width="20%">controllerManufacturer</td><td width="80%">controller manufacturer, options are:<br>JRKerr<br>SiTech<br></td></tr>
+<tr>
+<td width="20%">servoIOType</td><td width="80%">what type of IO method to use to communicate with the servo motor controllers, options are:<br>ioNone<br>ioFile<br>ioSerial<br>ioUDP<br>ioTCPserver<br>ioTCPclient<br>ioTCP<br></td></tr>
+<tr>
+<td width="20%">servoSerialPortName</td><td width="80%">serial port to use to communicate with the servo motor controllers, ie, 'COM1' if Windows, '/dev/ttyS0' if Linux'</td></tr>
+<tr>
+<td width="20%">servoBaudRate</td><td width="80%">serial port baud rate to communicate with the servo motor controllers</td></tr>
+<tr>
+<td width="20%">servoHomeIPPort</td><td width="80%">if using UDP method to communicate with the servo motor controllers, then the home port# to use</td></tr>
+<tr>
+<td width="20%">servoRemoteIPName</td><td width="80%">if using UDP or TCP method to communicate with the servo motor controllers, then the remote machine's IP address</td></tr>
+<tr>
+<td width="20%">servoRemoteIPPort</td><td width="80%">if using UDP or TCP method to communicate with the servo motor controllers, then the remote machine's IP port#</td></tr>
+<tr>
+<td width="20%">servoFileLocation</td><td width="80%">if using files to transmit/receive to communicate with the servo motor controllers, then location of the files</td></tr>
+<tr>
+<td width="20%">servoTrace</td><td width="80%">record all communications to trace file</td></tr>
+<tr>
+<td width="20%">servoPortWaitTimeMilliSecs</td><td width="80%">time in milliseconds to wait for servo motor controller response before giving up</td></tr>
+<tr>
+<td width="20%">moveToTargetTimeSec</td><td width="80%">look ahead time in seconds to calculate motor's next move command</td></tr>
+<tr>
+<td width="20%">UILookAndFeel</td><td width="80%">look and feel of the user interface</td></tr>
+<tr>
+<td width="20%">usePanelColors</td><td width="80%">use user-defined panel colors, otherwise use default colors</td></tr>
+<tr>
+<td width="20%">lightPanel</td><td width="80%">set the red, green, blue colors of light colored panels</td></tr>
+<tr>
+<td width="20%">mediumPanel</td><td width="80%">set the red, green, blue colors of medium colored panels</td></tr>
+<tr>
+<td width="20%">darkPanel</td><td width="80%">set the red, green, blue colors of dark colored panels</td></tr>
+<tr>
+<td width="20%">stopToggle</td><td width="80%">set the red, green, blue colors of stop toggle buttons</td></tr>
+<tr>
+<td width="20%">goToggle</td><td width="80%">set the red, green, blue colors of go toggle buttons</td></tr>
+<tr>
+<td width="20%">toggle</td><td width="80%">set the red, green, blue colors of toggle buttons</td></tr>
+<tr>
+<td width="20%">radioButton</td><td width="80%">set the red, green, blue colors of radio buttons</td></tr>
+<tr>
+<td width="20%">comboBox</td><td width="80%">set the red, green, blue colors of comboBoxes</td></tr>
+<tr>
+<td width="20%">updateUImilliSec</td><td width="80%">time in milliseconds to update user interface displays</td></tr>
+<tr>
+<td width="20%">datFileLocation</td><td width="80%">directory where the coordinate data files are located</td></tr>
+<tr>
+<td width="20%">autoGenInitFile</td><td width="80%">name of the object datafile to use for automatic generation of initializations</td></tr>
+<tr>
+<td width="20%">cmdFileLocation</td><td width="80%">directory where the command files are located</td></tr>
+<tr>
+<td width="20%">SiTechFirmwareFileLocation</td><td width="80%">directory where the SiTech controller firmware upgrade files are located</td></tr>
+</table>
+<h1><center>servo configuration parameters</center></h1><table border="1" width="100%">
+<tr>
+<td width="20%">controllerType</td><td width="80%">type of PICServo controller, options are:<br>altDec<br>azRa<br>fieldR<br>focus<br></td></tr>
+<tr>
+<td width="20%">controllerActive</td><td width="80%">'true' if the PICServo controller is powered on</td></tr>
+<tr>
+<td width="20%">ampEnableActiveHigh</td><td width="80%">'true' if the amplifier is enabled when control line set to logical high, default is 'false'</td></tr>
+<tr>
+<td width="20%">positionGainKp</td><td width="80%">value of the PID filter proportional component: position Gain Kp</td></tr>
+<tr>
+<td width="20%">velGainKd</td><td width="80%">value of the PID filter differential component: velocity Gain Kd</td></tr>
+<tr>
+<td width="20%">positionGainKi</td><td width="80%">value of the PID filter integral component: position Gain Ki</td></tr>
+<tr>
+<td width="20%">integrationLimitIL</td><td width="80%">value of the PID filter integration limit IL</td></tr>
+<tr>
+<td width="20%">outputLimitOL</td><td width="80%">output limit, max 255</td></tr>
+<tr>
+<td width="20%">currentLimitCL</td><td width="80%">current limit, max 255</td></tr>
+<tr>
+<td width="20%">positionErrorLimitEL</td><td width="80%">allowable Positional error before servo is disabled, max 16383</td></tr>
+<tr>
+<td width="20%">rateDivisorSR</td><td width="80%">PICServo PID servo loop timing rate divisor, a number higher than 1 causes the servo loop to proportionally run slower</td></tr>
+<tr>
+<td width="20%">ampDeadbandComp</td><td width="80%">amplifier deadband compensation at PWM of 0</td></tr>
+<tr>
+<td width="20%">track</td><td width="80%">'true' if tracking is turned on for this motor</td></tr>
+<tr>
+<td width="20%">stepsPerRev</td><td width="80%">motor steps per telescope's axis rotation</td></tr>
+<tr>
+<td width="20%">encoderCountsPerRev</td><td width="80%">motor encoder counts per motor shaft revolution</td></tr>
+<tr>
+<td width="20%">reverseMotor</td><td width="80%">'true' if motor direction should be reversed, else 'false'</td></tr>
+<tr>
+<td width="20%">accelDegSecSec</td><td width="80%">motor acceleration in degrees per second per second</td></tr>
+<tr>
+<td width="20%">fastSpeedDegSec</td><td width="80%">motor highest speed in degrees per second</td></tr>
+<tr>
+<td width="20%">slowSpeedArcsecSec</td><td width="80%">motor slow speed in degrees per second</td></tr>
+<tr>
+<td width="20%">dampenFactor</td><td width="80%">motor tracking aggressiveness, too high and motor will overshoot, too low and motor will not reach target</td></tr>
+<tr>
+<td width="20%">homeDeg</td><td width="80%">axis home position in degrees</td></tr>
+<tr>
+<td width="20%">sectorDeg</td><td width="80%">if axis employs a sector drive, size of sector in degrees, else leave at '0'</td></tr>
+<tr>
+<td width="20%">softLimitOn</td><td width="80%">software checked limits to motion is active</td></tr>
+<tr>
+<td width="20%">currentPositionDeg</td><td width="80%">motor current position in degrees</td></tr>
+<tr>
+<td width="20%">backlashArcmin</td><td width="80%">amount of backlash in arcminutes</td></tr>
+<tr>
+<td width="20%">guideArcsecSec</td><td width="80%">guiding rate in arcseconds per second of time</td></tr>
+<tr>
+<td width="20%">guideDragArcsecPerMin</td><td width="80%">drift to drag a guide star so that an autoguider can update in one direction only</td></tr>
+<tr>
+<td width="20%">driftArcsecPerMin</td><td width="80%">drift rate in arcseconds per minute of time</td></tr>
+<tr>
+<td width="20%">PECActive</td><td width="80%">'true' if periodic error correction is turned on, else 'false'</td></tr>
+<tr>
+<td width="20%">autoPECSyncDetect</td><td width="80%">'true' if automatic detection of the PEC synchronization point is used, else 'false'</td></tr>
+</table>
+
+</pre>
+</body>
+</html>

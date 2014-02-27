@@ -1,0 +1,173 @@
+
+'created on 2004-07-11/17:10:13.589
+
+[*** geographic location section ***]
+siteName                     default
+latitudeDeg                  44.0
+longitudeDeg                 123.0
+
+[*** mount section ***]
+mountType                    Altazimuth
+canMoveToPole                true
+canMoveThruPole              false
+primaryAxisFullyRotates      true
+meridianFlipPossible         false
+meridianFlipRequired         false
+autoMeridianFlip             false
+autoMeridianFlipFuzzDeg      0.0
+
+[*** eyepiece section ***]
+'format: eyepieceFocus <eyepieceName> <position>
+
+[*** handpad section ***]
+handpadPresent               true
+handpadMode                  Analyze
+handpadDesign                SiTech
+handpadFlipUpDown            false
+handpadFollowMeridianFlip    false
+SiTechRampDownDelaySec       3.0
+spiralSearchRadiusDeg        0.5
+spiralSearchSpeedDegSec      0.1
+
+[*** coordinate conversion section ***]
+initState                    AltazimuthAlignment
+initOne                      0.0 90.0 44.0 0.0 0.0
+initTwo                      0.0 0.0 46.0 180.0 0.0
+z1Deg                        0.0
+z2Deg                        0.0
+z3Deg                        0.0
+dataFileCoordYear            2005.0
+
+[*** error correction section ***]
+precessionNutationAberration false
+refractAlign                 none
+backlashActive               true
+useAltAzEC                   false
+useAltAltEC                  false
+useAzAzEC                    false
+usePMC                       false
+
+[*** PEC section ***]
+'format: buildPEC servoID  description  motorStepsPerPECArray  PECSize  guidingCycles  Rotation  PECIxOffset
+buildPEC   azRa   main   12083.2   200   10   biDir   0.0
+
+[*** guide section ***]
+guideDragRaArcsecPerMin      10.0
+guideDragDecArcsecPerMin     10.0
+handpadUpdateDrift           true
+
+[*** drift section ***]
+driftRaDegPerHr              0.0
+driftDecDegPerHr             0.0
+
+[*** encoder section ***]
+encoderType                  None
+encoderIOType                Serial
+encoderSerialPortName        COM3
+encoderBaudRate              9600
+encoderHomeIPPort            1961
+encoderRemoteIPName          bbad
+encoderRemoteIPPort          1962
+encoderFileLocation          .\
+encoderTrace                 false
+encoderAltDecCountsPerRev    8192
+encoderAzRaCountsPerRev      8192
+encoderAltDecDir             CW
+encoderAzRaDir               CW
+encoderFieldRDir             CW
+encoderFocusDir              CW
+encoderErrorThresholdDeg     100.0
+encoderAltDecOffset          0.698030859552061
+encoderAzRaOffset            1.489650061231096
+
+[*** external program interface section ***]
+ProjectPlutoGuidePath        C:\GUIDE8\
+ProjectPlutoGuideExec        guide8.exe
+readWriteExternalSlewFiles   true
+updateHTMLFreqSec            0.0
+extIOType                    None
+extSerialPortName            COM2
+extBaudRate                  9600
+extHomeIPPort                1956
+extRemoteIPName              bbad
+extRemoteIPPort              1957
+extFileLocation              .\
+extTrace                     false
+extPortWaitTimeMilliSecs     250
+
+[*** LX200 input protocol section ***]
+LX200Control                 true
+LX200IOType                  TCPserver
+LX200SerialPortName          COM3
+LX200BaudRate                9600
+LX200homeIPPort              1000
+LX200remoteIPName            1.32.1.99
+LX200RemoteIPPort            1000
+LX200FileLocation            .\
+LX200Trace                   false
+LX200MotionTimeoutSec        5.0
+LX200_LongFormat             false
+
+[*** servo section ***]
+controllerManufacturer       SiTech
+servoIOType                  Serial
+servoSerialPortName          COM2
+servoBaudRate                19200
+servoHomeIPPort              1954
+servoRemoteIPName            bbad
+servoRemoteIPPort            1955
+servoFileLocation            .\
+servoTrace                   true
+servoPortWaitTimeMilliSecs   250
+moveToTargetTimeSec          0.33
+
+[*** user interface section ***]
+UILookAndFeel                metouia
+usePanelColors               true
+lightPanel                   192 202 219
+mediumPanel                  158 174 192
+darkPanel                    128 140 156
+stopToggle                   255 000 000
+goToggle                     000 255 000
+toggle                       220 235 235
+radioButton                  177 219 224
+comboBox                     168 199 215
+updateUImilliSec             1000
+datFileLocation              C:\mel\cot\servo\java\
+autoGenInitFile              26bstars.dat
+cmdFileLocation              c:\mel\cot\servo\java\
+
+[*** SERVO_ID section ***]
+;SERVO_ID                    altDec azRa   fieldR focus  
+controllerType               motor  motor  motor  motor  
+controllerActive             true   true   false  false  
+ampEnableActiveHigh          false  false  false  false  
+positionGainKp               20000  20000  20000  20000  
+velGainKd                    32000  32000  32000  32000  
+positionGainKi               5000   5000   5000   5000   
+integrationLimitIL           20000  20000  20000  20000  
+outputLimitOL                255    255    255    255    
+currentLimitCL               200    200    200    200    
+positionErrorLimitEL         16383  16383  16383  16383  
+rateDivisorSR                1      1      1      1      
+ampDeadbandComp              0      0      0      0      
+stepsPerRev                  1.296E7 1.296E7 1.296E7 1.296E7 
+encoderCountsPerRev          2048   2048   2048   2048   
+reverseMotor                 false  false  false  false  
+accelDegSecSec               1      1      0      0      
+fastSpeedDegSec              2.5    2.5    2.5    0      
+slowSpeedArcsecSec           300    300    300    0      
+dampenFactor                 0.1    0.1    0.1    0.1    
+homeDeg                      0.0    0.0    0.0    0.0    
+sectorDeg                    0      0      0      0      
+softLimitOn                  false  false  false  false  
+currentPositionDeg           52.7574 110.1773 0   0      
+backlashArcmin               10     10     0      0      
+guideArcsecSec               15     15     0      0      
+guideDragArcsecPerMin        0.0    0.0    0.0    0.0    
+driftArcsecPerMin            0.0    0.0    0.0    0.0    
+PECActive                    false  false  false  false  
+autoPECSyncDetect            Off    Off    Off    Off    
+
+'end of configuration file
+

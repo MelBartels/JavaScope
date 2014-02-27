@@ -1,0 +1,152 @@
+Sidereal Technology Servo Controller Ascii Command Set:
+
+Notes:
+1. All commands MUST BE IN ALL CAPS!
+2. The # character represents a decimal number that you must type
+3. After each command, press the ENTER key.
+4. All Altitude commands begin with an "X".  
+	All Azimuth/RA commands begin with a "Y"
+
+-------------COMMANDS---------------
+Q (No cr after) Send scope encoder data in Tangent format
+SB#  Set Baud Rate (1 = 9600, 2 = 19200) Changes all controllers on serial bus.  (1.5 or later)
+X#   Move Servo (-2147483648 to +2147483647)  You can tag a speed command at the end.  
+	Example: X-2345S1000000<E>
+X    Returns the X position of the servo
+XF#  Forces the X position to be equal to the number (-2147483648 to +2147483647) (This stops the controller if moving)
+XS#  Velocity of X Servo (0-2147483647)
+XS Returns the X velocity of the servo (what it would be if it was currently moving at fully accelerated speed, this may not be what it acually is at the moment).
+XR#  Ramping speed or Acceleration of X servo (0-3900)
+XR Returns the Ramp speed.
+XP#  Proportional Band of X servo (0-32767)
+XP Returns the Proportional band
+XI#  X Integral (0-32767)
+XI Returns the Integral
+
+
+XD#  X Derivative (0-32767)
+XD Returns the Integral
+XE#  Maximum position error limit before servo turns off (0-32767)
+XEL Returns position error limit.
+XE   Returns the position error of the servo
+XO#  X Output limit (0-255)
+XO   Returns the PWM output of the servo (0-255)
+XC#  X Current Limit (0-240 = 0-2.40 amps) 
+XC   Returns the X motor current * 100 (240 MAX)
+XM#  X to manual mode, the number is the PWM value, -255 to +255.
+XA   X to Auto mode.
+XN   X Normal Stop     (ramps down, then stops.  Automatically clears when new position is given)
+XNT Just like XN, except when it slows down enough, it starts tracking in the DragNTrack or SlewNTrack mode.
+XG   X Emergency stop   (stops immediately)
+XL#  Set Integral Limit (0-24000)
+XL   Returns Integral Limit 
+XB#  Number sets the servo bits like direction, etc.  (0-255)
+XB   Returns current X Bits Value.
+XZ#  Forces the scope encoder position to be equal to the number (-2147483648 to +2147483647)
+XZ   Returns the scope encoder position
+
+The following  commands don't have a 'Y' command, only X.  They affect both servos
+XK   Returns the handpad info in Decimal.
+XH   Returns the temperature of the CPU chip (in deg's F)
+XV   Returns the firmware version * 10.
+XJ   Returns the motor power supply voltage * 10 (please divide returned number by 10)
+XQ   Resets the servo system (both)
+XU   Programs factory defaults into the flash ROM.
+XW   Writes the configuration of both the x and y parameters from working RAM to the flash ROM.
+XT   Reads the configuration from the Flash Rom into the working RAM.
+FC   Flash Configure, Send 128 more bytes, then 2 bytes of checksum (Simple Addition of all data bytes sent), and it will write the new data to configuration.  It also reads the new data into the working RAM. 
+
+SC   Send Configuration, The controller Sends 128 bytes, followed by two bytes of checksum.  This data is what is in the flash, not necessarily what is in the working RAM.
+
+
+All of the following XX extended commands have a corresponding read command
+as an example, if you type "XXL<E>" it responds with the latitude.
+
+XXL# Store the latitude to the controller (4500 = 45 deg's north, -4500 = 45 deg's south)
+XXZ# Store the azimuth encoder ticks per full circle.
+XXT# Store the altitude encoder ticks per full circle.
+XXU# Store the number of encoder ticks for the Altitude Motor Encoder to the controller
+XXV# Store the number of encoder ticks for the Azimuth Motor Encoder to the controller
+XXA# Stores the Altitude Slew Rate to the controller 
+XXB# Stores the Azimuth Slew Rate to the controller
+XXC# Stores the Altitude Pan Rate to the controller
+XXD# Stores the Azimuth Pan Rate to the controller
+XXE# Stores the Platform tracking rate to the controller
+XXF# Stores the Platform up/down adjuster to the controller
+XXG# Stores the Platform Goal to the controller
+XXH# Stores the Altitude Guide Rate to the controller
+XXI# Stores the Azimuth Guide Rate to the controller
+XXJ# Stores the PicServo Timeout Value to the controller (Seconds).
+XXQ# Turns off or on the digital outputs of the Radio Handpad Reciever
+XXN# A zero turns off the Argo Navis ® mode.  A one turns it on.
+
+Version 1.6 and later has the following:
+XXK# Local Search Alitude Distance
+XXM# Local Search Azimuth Distance
+XXO# Altitude Backlash
+XXP# Azimuth Backlash
+
+
+
+When the controller receives a 'Q' as the first character in a line, it responds emulating the Tangent “Q” protocol.  The encoder resolution is always 18000 (the controller uses the configured values for encoder ticks per revolution for the Scope Encoders, and converts it to 18000).
+
+0AAh Puts the servo into the PicServo Emulation mode (no CR required).  See http://www.jrkerr.com/psdata.pdf for a description.  There are some items different, all motion control is the same.  The differences are descibed below.
+
+The following two ASCII commands with Binary data are for reading and controlling the servo controller in a very efficient manner.  They have been added at version 1.5 of the controller firmware.
+XXS<E>
+The controller responds with four long ints of position, then other bytes for  keypad status, X and Y Bits, and other bits as follows:
+Byte 0-3 Current Altitude/Dec Motor Position  (least significant byte first)
+Byte 4-7 Current Azimuth/RA Motor Position.
+Byte 8-11 Current Altitude/Dec Scope Encoder Position
+Byte 12-15 Current Azimuth/RA Scope Encoder Position.
+
+Byte 16 is Keypad Status (see the top of this section for a description of bits)
+Byte 17 is Xbits
+Byte 18 is YBits
+Byte 19 is Extra bits
+	Bit 0 - Set if Altitude/Dec motor is stopped
+	Bit 1 – Set if Altitude/Dec motor is in manual 
+	Bit 2 - future
+	Bit 3 – future
+	Bit 4 - Set if Azimuth/RA motor is stopped
+	Bit 5 – Set if Azimuth/RA motor is in manual 
+	Bit 6 - future
+	Bit 7 – future
+
+Byte 20 is a 1 byte checksum of the previous 19 bytes (simple addition).
+
+XXR<E>
+The controller now waits for an additional 20 bytes from a host as follows:
+Byte 0-3 New Altitude/Dec Motor Position Goal (least significant byte first)
+Byte 4-7 New Azimuth/RA Motor Position Goal.
+Byte 8-11 New Altitude/Dec Motor Speed
+Byte 12-15 New Azimuth/RA Motor Speed
+Byte 16 Various bits
+	Bit 0 – if 0, the following new XBit and YBit values are ignored. If '1', the new XBit and YBit values are used.
+	Bit 1 -7 future
+Byte 17 New XBits value (must have previous bit 0 set)
+Byte 18 New YBits value (must have previous bit 0 set)
+Byte 19 Checksum of all above data bits (simple 8 bit addition)
+
+If you use the above binary command to control the servo controller, be sure to have a restart communication if the command gets out of sync by a communication fault.  If you receive a bad checksum, you should resync communication by sending a few of XXS commands.
+
+The flash ram values are loaded from the flash Rom to Ram on reset.
+Both the X and Y parameters are stored to the flash ROM.
+
+Use X and Y for module address 1.  
+If the module address is 3, use 'T' and 'U', for address 5, it's 'V' and 'W'.
+
+Description of the bits for the XBits and YBits:
+0    if 1, the motor encoder is incremented the other direction
+1    if 1, the motor polarity is reversed
+2    if 1, the azimuth (or altitude) encoder is reversed
+3    if 1, (x only) we're in the computerless drag and track mode
+3    if 1, (y only) we're in the computerless slew and track mode  (no clutches, must use handpad to slew)
+     (must be in drag and track too)
+4    if 1, (x only) we're in the tracking platform mode
+5    if 1, (x only) we enable the hand paddle
+6    if 1, (x only) hand paddle is compatible with New Hand Paddle (allows slewing in two directions, and guiding)
+7    if 1, (x only) we're in the guide mode. The pan rate is added or subtracted from
+     the current tracking rate.
+Note about the Guide Mode:  If PC software puts the controller in the guide mode, and you are controlling an Equatorial mount, you must give the declination motor a destination, even if you want it to be stopped.  If you want the declination axis to be normally stopped, give the declination a far far away goal, and set the speed to zero.  This is because the controller adds or subtracts from the current speed and direction, and the controller gets confused if the axis is at its destination.  This is changed inf servo version 1.6, and this is automatically done for you in the controller.
+The Y_Bits bits 4-7 are the digital input status for the 4 digital inputs from the radio handpad reciever.  This is only available if you're using servo version 1.6 and also if you have a handpad reciever connected.

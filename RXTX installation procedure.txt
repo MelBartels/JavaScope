@@ -1,0 +1,7 @@
+RXTX installation procedure
+
+Copy rxtxSerial.dll to C:\Program Files (x86)\Java\jdk1.7.0_25\jre\bin
+Copy RXTXcomm.jar to C:\Program Files (x86)\Java\jdk1.7.0_25\jre\lib\ext
+
+note to dnld and install the Java SE (Standard Edition) Development Kit from Oracle
+note the \jre\ dir to use

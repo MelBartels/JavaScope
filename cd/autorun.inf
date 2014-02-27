@@ -1,0 +1,9 @@
+[Autorun]
+; /s parameter no longer needed for version 1.2
+open=AutoRunPro.exe
+action=AutoRunPro.exe
+; action new for Vista!
+
+[AutorunPro]
+; Here are some sample uses for Autorunpro. It keeps processing Them in Run1..RunN order until it doesnt find one.
+Run1=ScopeIIservo.html

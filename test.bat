@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Java\jdk1.7.0_25\bin\java" -cp scope.jar;RXTXcomm.jar scope -t

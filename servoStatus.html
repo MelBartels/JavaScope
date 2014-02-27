@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>ServoStatus</title>
+<link rel="stylesheet" type="text/css" href="status.css">
+<META HTTP-EQUIV="Refresh" CONTENT="5">
+</head>
+<body>
+<pre>
+
+handpadmode=handpadModeAnalyze   handpadFRFocusOn=false   guideActive=false   handpad status: f                SiTech controller operating handpad
+
+Log of servo command results
+ServoID - Command - StatusResult
+altDec getStatus ok
+azRa getStatus ok
+altDec getStatus ok
+azRa getStatus ok
+altDec getStatus ok
+azRa getStatus ok
+altDec getStatus ok
+azRa getStatus ok
+altDec getStatus ok
+azRa getStatus ok
+end of log
+trace turned off<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=3 STYLE="page-break-before: always">
+<TR VALIGN=TOP>
+<td WIDTH=50%><PRE>
+status altDec
+statusByte:9 HomeInProg:0 limit1:0 limit2:0 PosErr:0 powerOn:1 OverCurr:0 CksumErr:0 moveDone:1
+ auxStatusByte:12 timerOverrun:0 slewDone:0 accelDone:1 servoOn:1 posWrap:0 index:0
+ActPos: 0 ActPosDeg: 0 ActBacklashCount: 0 AD: 2 ActVel: 0 HomePos: 0 id:0 Ver:10
+position change: 0 over: 0.17 sec, velocity: 0"/sec
+status return count (successful/total/consecutive_unsuccessful) 263/264/0
+
+PICServoSim position in counts 0 velocity ("/sec): current 0 average 0
+   position error: 0   counts/sec: ?
+StickyBits for altDec: 
+display move altDec noMove finished none ADValue:2
+track error and velocity in arcseconds, time in seconds:
+rms 0                 peak-valley 0                
+end of tracking errors
+
+AccumGuide = 0 arcsec, saving guide for PEC: off
+PEC is off
+backlash taken up in CCW direction = 0.0 arcminutes,  0% of total
+no axis to axis correction
+no PMC correction</PRE></td><td WIDTH=50%><PRE>
+status azRa
+statusByte:201 HomeInProg:1 limit1:0 limit2:1 PosErr:0 powerOn:1 OverCurr:0 CksumErr:0 moveDone:1
+ auxStatusByte:12 timerOverrun:0 slewDone:0 accelDone:1 servoOn:1 posWrap:0 index:0
+ActPos: 0 ActPosDeg: 0 ActBacklashCount: 0 AD: 3 ActVel: 0 HomePos: -2 id:0 Ver:10
+position change: 0 over: 0.11 sec, velocity: 0"/sec
+status return count (successful/total/consecutive_unsuccessful) 264/264/0
+
+PICServoSim position in counts 0 velocity ("/sec): current 0 average 0
+   position error: 0   counts/sec: ?
+StickyBits for azRa: 
+display move azRa noMove finished none ADValue:3
+track error and velocity in arcseconds, time in seconds:
+rms 0                 peak-valley 0                
+end of tracking errors
+
+AccumGuide = 0 arcsec, saving guide for PEC: off
+PEC is off
+PEC for azRamainPEC is ON 
+   motorStepsPerPECArray=12083.2 PECSize=200 PECRotation=biDir
+   PECIndex=0 PECValue=0 arcsec PECIxOffset=0.0 lastPECIxOffset=0.0
+
+backlash taken up in CCW direction = 0.0 arcminutes,  0% of total
+no axis to axis correction
+no PMC correction</PRE></td></TR>
+</TABLE>
+
+</pre>
+</body>
+</html>

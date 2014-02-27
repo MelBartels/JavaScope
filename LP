@@ -1,0 +1,1 @@
+path=/jdk1.3.1_02/bin:$path;export path

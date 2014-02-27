@@ -1,0 +1,1 @@
+java -cp scope.jar;RXTXcomm.jar;metouia.jar scope

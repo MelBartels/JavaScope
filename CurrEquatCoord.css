@@ -1,0 +1,6 @@
+body
+{
+	font-size:expression(document.body.clientWidth*0.12);
+	background-color: #000080;
+	color: #00FFFF;
+}

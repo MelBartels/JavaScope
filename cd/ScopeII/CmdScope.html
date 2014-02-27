@@ -1,0 +1,261 @@
+<html>
+<head>
+<title>cmdScope</title>
+<link rel="stylesheet" type="text/css" href="status.css">
+</head>
+<body>
+<pre>
+<table border="1" width="100%">
+<tr>
+<td width="30%">cmd_scope_auto_scroll_on</td><td width="70%">auto_scroll_on [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_auto_scroll_off</td><td width="70%">auto_scroll_off [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_reload_scroll</td><td width="70%">reload_scroll [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_pause</td><td width="70%">pause [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_prompt</td><td width="70%">prompt [pauseSecs] [promptStringToDisplay]</td></tr>
+<tr>
+<td width="30%">cmd_scope_cancel_all_cmds</td><td width="70%">cancel_all_cmds [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_exec_cmd_file</td><td width="70%">exec_cmd_file [filename] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_scroll_previous_object</td><td width="70%">grandtour_scroll_object [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_scroll_next_object</td><td width="70%">grandtour_scroll_object [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_grandtour_file</td><td width="70%">grandtour_file [filename] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_grandtour_nearest_object</td><td width="70%">grandtour_nearest_object [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_grandtour_previous_object</td><td width="70%">grandtour_previous_object [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_grandtour_next_object</td><td width="70%">grandtour_next_object [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_spiral_search_start</td><td width="70%">spiral_search_start [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_spiral_search_stop</td><td width="70%">spiral_search_stop [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_LX200</td><td width="70%">:[LX200ProtocolCommand]# [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_cfg_parm</td><td width="70%">cfg_parm [parameterName] [parameterValue(s)]</td></tr>
+<tr>
+<td width="30%">cmd_scope_open_motor_controller_ioport</td><td width="70%">open_motor_controller_ioport [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_start_motor_controllers</td><td width="70%">start_motor_controllers [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_init_servo_vars</td><td width="70%">init_servo_vars [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_define_status</td><td width="70%">define_status [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_encoder_type</td><td width="70%">encoder_type [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_reset_encoders_type</td><td width="70%">reset_encoders [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_quit</td><td width="70%">quit [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_save_cfg</td><td width="70%">save_cfg [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_write_logfile</td><td width="70%">write_logfile [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_write_input_comment</td><td width="70%">write_input_comment [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_html_update_freq</td><td width="70%">html_update_freq [updateFrequencyInSecs] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_left_mode_key</td><td width="70%">handpad_left_mode_key [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_right_mode_key</td><td width="70%">handpad_right_mode_key [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_up_fast</td><td width="70%">handpad_up_fast [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_up_slow</td><td width="70%">handpad_up_slow [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_up_stop</td><td width="70%">handpad_up_stop [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_down_fast</td><td width="70%">handpad_down_fast [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_down_slow</td><td width="70%">handpad_down_slow [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_down_stop</td><td width="70%">handpad_down_stop [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_CW_fast</td><td width="70%">handpad_CW_fast [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_CW_slow</td><td width="70%">handpad_CW_slow [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_CW_stop</td><td width="70%">handpad_CW_stop [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_CCW_fast</td><td width="70%">handpad_CCW_fast [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_CCW_slow</td><td width="70%">handpad_CCW_slow [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_CCW_stop</td><td width="70%">handpad_CCW_stop [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_allow_SiTech_control_on</td><td width="70%">handpad_allow_SiTech_control_on [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_handpad_allow_SiTech_control_off</td><td width="70%">handpad_allow_SiTech_control_off [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_initState</td><td width="70%">initState [INIT_STATE] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_init1</td><td width="70%">init1 [optEpoch] [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_init2</td><td width="70%">init2 [optEpoch] [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_init3</td><td width="70%">init3 [optEpoch] [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_init1input</td><td width="70%">init1input [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_init2input</td><td width="70%">init2input [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_init3input</td><td width="70%">init3input [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_autoInit1</td><td width="70%">autoInit1 [optEpoch] [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_autoInit2</td><td width="70%">autoInit2 [optEpoch] [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_init_using_closest_inithist_analysis</td><td width="70%">init_using_closest_inithist_analysis [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_kill_inits</td><td width="70%">kill_inits [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_alt_offset</td><td width="70%">alt_offset [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_reinit</td><td width="70%">reinit [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_new_z123_reinit</td><td width="70%">new_z123_reinit [z1Deg] [z2Deg] z3Deg] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_new_z12_from_inEquat_currAltaz</td><td width="70%">new_z12_from_inEquat_currAltaz [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_new_z123_from_inEquat_currAltaz</td><td width="70%">new_z123_from_inEquat_currAltaz [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_new_z12_from_analysis_file</td><td width="70%">new_z12_from_analysis_file [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_new_z123_from_analysis_file</td><td width="70%">new_z123_from_analysis_file [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_analyze</td><td width="70%">analyze [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_polarAlign1</td><td width="70%">polarAlign1 [optEpoch] [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_polarAlign2</td><td width="70%">polarAlign2 [optEpoch] [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_polarAlign3</td><td width="70%">polarAlign3 [optEpoch] [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_backlash_on</td><td width="70%">backlash_on [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_backlash_off</td><td width="70%">backlash_off [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_pec_on</td><td width="70%">pec_on [servoID] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_pec_off</td><td width="70%">pec_off [servoID] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_pec_synch</td><td width="70%">pec_synch [servoID] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_guide_on</td><td width="70%">guide_on [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_guide_off</td><td width="70%">guide_off [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_guide_save_pec_start</td><td width="70%">guide_save_pec_start [servoID] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_guide_save_pec_end</td><td width="70%">guide_save_pec_end [servoID] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_build_guide_analysis_files</td><td width="70%">build_guide_analysis_files [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_create_pec_from_guide_analysis</td><td width="70%">create_pec_from_guide_analysis [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_create_pmc_from_analysis</td><td width="70%">create_pmc_from_analysis [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_reset_abs_equat</td><td width="70%">reset_abs_equat [optEpoch] [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_reset_off_equat</td><td width="70%">reset_off_equat [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_set_abs_input_equat</td><td width="70%">set_abs_input_equat [optEpoch] [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_set_abs_input_equat</td><td width="70%">set_off_input_equat [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_set_abs_input_altaz</td><td width="70%">set_abs_input_altaz [AltitudeInDecimalDegrees] [AzimuthInDecimalDegrees] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_set_off_input_altaz</td><td width="70%">set_off_input_altaz [AltitudeInDecimalDegrees] [AzimuthInDecimalDegrees] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_reset_abs_altaz</td><td width="70%">reset_abs_altaz [AltitudeInDecimalDegrees] [AzimuthInDecimalDegrees] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_reset_off_altaz</td><td width="70%">reset_off_altaz [AltitudeInDecimalDegrees] [AzimuthInDecimalDegrees] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_reset_FR</td><td width="70%">cmd_scope_reset_FR [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_reset_meridian_flip</td><td width="70%">reset_meridian_flip [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_reset_home</td><td width="70%">reset_home [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_reset_scope_to_encoders</td><td width="70%">reset_scope_to_encoders [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_reset_encoders_to_scope</td><td width="70%">reset_encoders_to_scope [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_save1</td><td width="70%">save1 [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_restore1</td><td width="70%">restore1 [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_drift_equat</td><td width="70%">drift_equat [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [timeForDriftInSeconds] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_drift_altaz</td><td width="70%">drift_altaz [DriftAltitudeInDecimalDegrees] [DriftAzimuthInDecimalDegrees] [timeForDriftInSeconds] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_trackon</td><td width="70%">trackon [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_trackoff</td><td width="70%">trackoff [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_stop</td><td width="70%">stop [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_motors_on</td><td width="70%">motors_on [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_motors_off</td><td width="70%">motors_off [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_fast_speed</td><td width="70%">fast_speed [speedInDegPerSec] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slow_speed</td><td width="70%">slow_speed  [speedInDegPerSec] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slew_abs_altaz</td><td width="70%">slew_abs_altaz [AltitudeInDecimalDegrees] [AzimuthInDecimalDegrees] [timeForMoveInSecs] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slew_off_altaz</td><td width="70%">slew_off_altaz [AltitudeInDecimalDegrees] [AzimuthInDecimalDegrees] [timeForMoveInSecs] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slew_abs_equat</td><td width="70%">slew_abs_equat [optEpoch] [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [timeForMoveInSecs] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slew_off_equat</td><td width="70%">slew_off_equat [RaHr] [RaMin] [RaSec] [decDeg] [DecMin] [DecSec] [timeForMoveInSecs] [pauseSecs] [positionName]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slew_off_equat_arcmin</td><td width="70%">slew_off_equat_arcmin [RaArcmin] [DecArcmin] [timeForMoveInSecs] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slew_meridian_flip</td><td width="70%">slew_meridian_flip [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slew_home</td><td width="70%">slew_home [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slew_nearest_object</td><td width="70%">slew_nearest_object [filename] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slew_nearest_object_avoid_input</td><td width="70%">slew_nearest_object_avoid_input [filename] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slew_nearest_object_not_in_input_file</td><td width="70%">slew_nearest_object_not_in_input_file [filename] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slew_match_object_name</td><td width="70%">slew_match_object_name [dir] [object] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slew_match_comet_name</td><td width="70%">slew_match_comet_name [dir] [object] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_read_equat_slew</td><td width="70%">read_equat_slew [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_write_equat_slew</td><td width="70%">write_equat_slew [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_write_altaz_slew</td><td width="70%">write_altaz_slew [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_Project_Pluto_Guide</td><td width="70%">Project_Pluto_Guide [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_focus_fast_speed</td><td width="70%">focus_fast_speed [speedInStepsPerSec] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_slow_speed</td><td width="70%">focus_slow_speed [speedInStepsPerSec] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_reset_focus</td><td width="70%">reset_focus [focusPosition] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_focus_abs</td><td width="70%">focus_abs [focusPosition] [timeForMoveInSecs] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_focus_rel</td><td width="70%">focus_rel [focusPosition] [timeForMoveInSecs] [pauseSecs] [comment]</td></tr>
+<tr>
+<td width="30%">cmd_scope_focus_eyepiece</td><td width="70%">focus_eyepiece [eyepieceName] [timeForMoveInSecs] [pauseSecs] [comment]</td></tr>
+</table>
+
+</pre>
+</body>
+</html>

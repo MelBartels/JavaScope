@@ -1,0 +1,54 @@
+From: Randall Pufahl [rpufahl@yahoo.com]
+Sent: Wednesday, October 04, 2006 10:13 AM
+To: mel Bartels
+Cc: dave sopchak; charlie wicks
+Subject: ScopeII Macintosh install procedure
+
+Hey Mel
+I installed ScopeII from the CD and went thru the
+install procedure in the manual.  I am not sure if
+this changed from early RXTX or MacOS X versions but
+now, the install procedure should be (for Tiger
+anyway):
+
+Getting Started on the MAC
+ 
+Install all the files on the CD to a chosen directory.
+  You can remove all the files with an extension of
+".bat and .exe" since these are only for Windoze
+installation. 
+
+Move the RXTXcomm.jar and metouia.jar files to /Library/Java/Extensions/.
+
+You will need to get file librxtxSerial.jnilib from www.rxtx.org website. Download the latest package.  As of now, it is
+labeled: Wed Mar 1 2006 RXTX 2.1-7r2.  Click on "RXTX
+2.1-7r2" to download the package.
+In the pacakge find file: ~rxtx-2.1-7r2/MACOSX_IDE/ForPackageMaker/Install/Library/Java/Extensions/librxtxSerial.jnilib
+
+copy file "librxtxSerial.jnilib" to
+/Library/Java/Extensions/.
+
+ At a command line, launch ‘java -cp scope.jar scope’.
+ 
+///end install instructions
+
+Thats the best install procedure i could come up with.
+ I do not see how this could have ever run without librxtxSerial.jnilib.  Maybe nobody used it on the Mac?
+
+Anyway, I have it up and running but not connected to
+the servo controller.  I don't have a handpad at the
+moment so don't have a lot of motivation to setup the
+dob and give it a go.
+
+Hope this help, please let me know if there is an
+easier way, its the only way i could get to work.  Not
+having librxtxSerial.jnilib was a real bear to figure
+out!
+
+randy
+
+
+__________________________________________________
+Do You Yahoo!?
+Tired of spam?  Yahoo! Mail has the best spam protection around 
+http://mail.yahoo.com 
